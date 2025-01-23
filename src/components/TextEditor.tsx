@@ -17,12 +17,12 @@ function TextEditor() {
     return (
         <div className="poem-area">
             <TextArea
+                style={{ color: textColor, fontSize: `${textSize}em` }}
                 className="poem-text-area"
                 onChange={handleTextChange}
                 placeholder="Write your art here..."
-                rows={8}
             />
-            <div className="poem-display-area" style={{ color: textColor, fontSize: `${textSize}em` }}>
+            <div className="poem-display-area" >
                 {poemText && <PoemFrame poemText={poemText} />}
             </div>
         </div>
