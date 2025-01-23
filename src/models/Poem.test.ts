@@ -10,4 +10,10 @@ describe('Poem', () => {
         expect(poem.verses[0].words[0].syllableCount).toBe(1);
         expect(poem.verses[1].totalSyllables).toBe(6);
     });
+
+    it('should not render empty new lines', () => {
+        const text = 'This is a line\n';
+        const poem = new Poem(text);
+        expect(poem.verses.length).toBe(1);
+    });
 });
