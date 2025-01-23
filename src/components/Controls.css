@@ -1,9 +1,42 @@
 .controls-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    height: 200px; /* Ensure all groups have the same height */
+}
+
+.control-group-button {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+  padding: 20px;
+  height: 200px;
+}
+
+.control-title {
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .control-item {
-  margin: 20px;
+    margin: 10px 0;
+}
+
+.control-item label {
+    margin-left: 10px;
 }
