@@ -11,6 +11,7 @@ function TextEditor() {
     const textSize = usePoemStore((state) => state.textSize);
     const fontStyle = usePoemStore((state) => state.fontStyle);
     const fontFamily = usePoemStore((state) => state.fontFamily);
+    const backgroundColor = usePoemStore((state) => state.backgroundColor);
 
     const handleTextChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
         setPoem(e.target.value);
@@ -19,7 +20,7 @@ function TextEditor() {
     return (
         <div className="poem-area">
             <TextArea
-                style={{ color: textColor, fontSize: `${textSize}em`, fontStyle: fontStyle, fontFamily: fontFamily }}
+                style={{ color: textColor, fontSize: `${textSize}em`, fontStyle: fontStyle, fontFamily: fontFamily, backgroundColor: backgroundColor }}
                 className="poem-text-area"
                 onChange={handleTextChange}
                 placeholder="Write your art here..."

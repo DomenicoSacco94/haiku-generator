@@ -9,6 +9,7 @@ const colors = [
     { color: 'Red', colorCode: '#FF0000' },
     { color: 'Green', colorCode: '#00FF00' },
     { color: 'Blue', colorCode: '#0000FF' },
+    { color: 'White', colorCode: '#FFFFFF' },
 ];
 
 const fontStyles = ['normal', 'bold', 'italic'];
@@ -21,6 +22,7 @@ function Controls() {
     const setTextSize = usePoemStore((state) => state.setTextSize);
     const setFontStyle = usePoemStore((state) => state.setFontStyle);
     const setFontFamily = usePoemStore((state) => state.setFontFamily);
+    const setBackgroundColor = usePoemStore((state) => state.setBackgroundColor);
 
     const handlePrintClick = () => {
         console.log("Will print some stuff");
@@ -43,15 +45,14 @@ function Controls() {
         setFontFamily(value);
     };
 
+    const handleBackgroundColorChange = (value: string) => {
+        setBackgroundColor(value);
+    };
+
     return (
         <div className="controls-container">
             <div className="control-group">
-                <div className="control-title">Font</div>
-                <Select className="control-item" defaultValue="normal" style={{ width: 120 }} onChange={handleFontStyleChange}>
-                    {fontStyles.map((style) => (
-                        <Option key={style} value={style}>{style}</Option>
-                    ))}
-                </Select>
+                <div className="control-title">Font Family</div>
                 <Select className="control-item" defaultValue="monospace" style={{ width: 120 }} onChange={handleFontFamilyChange}>
                     {fontFamilies.map((family) => (
                         <Option key={family} value={family}>{family}</Option>
@@ -59,12 +60,23 @@ function Controls() {
                 </Select>
             </div>
             <div className="control-group">
-                <div className="control-title">Color/Size</div>
+                <div className="control-title">Font Style</div>
+                <Select className="control-item" defaultValue="normal" style={{ width: 120 }} onChange={handleFontStyleChange}>
+                    {fontStyles.map((style) => (
+                        <Option key={style} value={style}>{style}</Option>
+                    ))}
+                </Select>
+            </div>
+            <div className="control-group">
+                <div className="control-title">Color</div>
                 <Select className="control-item" defaultValue="#000000" style={{ width: 120 }} onChange={handleColorChange}>
                     {colors.map(({ color, colorCode }) => (
                         <Option key={colorCode} value={colorCode}>{color}</Option>
                     ))}
                 </Select>
+            </div>
+            <div className="control-group">
+                <div className="control-title">Size</div>
                 <div className="control-item">
                     <input
                         id="text-size"
@@ -77,6 +89,14 @@ function Controls() {
                     />
                     <label style={{padding: "10px"}}>{textSize}em</label>
                 </div>
+            </div>
+            <div className="control-group">
+                <div className="control-title">Background Color</div>
+                <Select className="control-item" defaultValue="#FFFFFF" style={{ width: 120 }} onChange={handleBackgroundColorChange}>
+                    {colors.map(({ color, colorCode }) => (
+                        <Option key={colorCode} value={colorCode}>{color}</Option>
+                    ))}
+                </Select>
             </div>
             <div className="control-group-button">
                 <Button className="control-item" type="primary" onClick={handlePrintClick}>Print Poem</Button>
