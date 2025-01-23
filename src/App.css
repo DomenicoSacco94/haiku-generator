@@ -1,3 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
 .app-container {
   display: flex;
   flex-direction: column;
@@ -6,22 +16,16 @@
 
 .main-content {
   display: flex;
-  flex: 2;
+  flex: 4;
 }
 
 .text-editor {
-  flex: 2;
-  background-color: #f0f0f0;
-  height: 100%;
-
-}
-
-.side-bar {
   flex: 1;
-  background-color: #d0d0d0;
+  margin: 20px;
 }
 
 .controls {
   flex: 1;
-  background-color: #b0b0b0;
+  margin: 30px;
+  background-color: lightgray;
 }

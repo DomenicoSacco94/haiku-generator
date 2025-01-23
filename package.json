@@ -14,7 +14,8 @@
     "antd": "^5.23.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "syllables": "^2.2.0"
+    "syllables": "^2.2.0",
+    "zustand": "^5.0.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
