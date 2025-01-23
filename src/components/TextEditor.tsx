@@ -1,4 +1,4 @@
-import '../App.css';
+import './TextEditor.css';
 import TextArea from "antd/lib/input/TextArea";
 import {ChangeEvent, useState} from "react";
 import syllables from 'syllables';
@@ -37,12 +37,7 @@ function TextEditor() {
             return (
                 <div
                     key={`line-${lineIndex}`}
-                    style={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        marginBottom: '8px',
-                    }}
+                    className="poem-counted-word-group"
                 >
                     <span style={{marginRight: '12px'}}>{annotatedWords}</span>
                     <span style={{fontSize: '0.9em', color: 'red'}}>

@@ -16,27 +16,6 @@
 
 }
 
-.poem-area {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-
-}
-
-.poem-text-area {
-  flex: 1;
-  background-color: #eeeeee;
-  text-align: center;
-  font-size: 2em;
-}
-
-.poem-display-area {
-  flex: 1;
-  text-align: center;
-  padding: 20px;
-  font-size: 2em;
-}
-
 .side-bar {
   flex: 1;
   background-color: #d0d0d0;
