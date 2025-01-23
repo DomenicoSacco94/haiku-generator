@@ -1,4 +1,4 @@
-import { SyllabCountedWord } from "./SyllabCountedWord.ts";
+import { SyllabCountedWord } from "./SyllabCountedWord";
 
 export class Verse {
     words: SyllabCountedWord[];

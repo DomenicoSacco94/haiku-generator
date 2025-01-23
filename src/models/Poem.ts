@@ -1,4 +1,4 @@
-import { Verse } from "./Verse.ts";
+import { Verse } from "./Verse";
 
 export class Poem {
     verses: Verse[];
