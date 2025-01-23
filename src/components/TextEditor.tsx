@@ -1,7 +1,7 @@
 import './TextEditor.css';
 import TextArea from "antd/lib/input/TextArea";
 import {ChangeEvent, useState} from "react";
-import PoemText from "./PoemText.tsx";
+import PoemFrame from "./PoemFrame.tsx";
 
 function TextEditor() {
     const [text, setText] = useState('');
@@ -20,7 +20,7 @@ function TextEditor() {
                 rows={8}
             />
             <div className="poem-display-area">
-                {text.trim().length != 0 && <PoemText poemText={text}/>}
+                {text.trim().length != 0 && <PoemFrame poemText={text}/>}
             </div>
         </div>
     );

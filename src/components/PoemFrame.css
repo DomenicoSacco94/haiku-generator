@@ -1,0 +1,19 @@
+.poem-counted-word-group {
+    /* Add any additional styles if needed */
+}
+
+.word {
+    margin-right: 8px;
+}
+
+.word-syllable-count {
+    font-size: 0.5em;
+    color: gray;
+    margin-left: 4px;
+}
+
+.total-syllables {
+    font-size: 0.9em;
+    color: red;
+    margin-left: 12px;
+}
