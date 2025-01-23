@@ -1,7 +1,9 @@
 import {Poem} from "../models/Poem.ts";
 
 
-function PoemText ({poem}: {poem: Poem}) {
+function PoemText ({poemText}: {poemText: string}) {
+    const poem: Poem = new Poem(poemText);
+
     return poem.verses.map((verse, lineIndex) => (
         <div key={`line-${lineIndex}`} className="poem-counted-word-group">
             {verse.words.map((word, wordIndex) => (

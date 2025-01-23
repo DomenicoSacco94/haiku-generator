@@ -1,15 +1,12 @@
-import {Verse} from "./Verse.ts";
+import { Verse } from "./Verse.ts";
 
 export class Poem {
     verses: Verse[];
 
-    constructor(verses: Verse[]) {
-        this.verses = verses;
-    }
-
-    static fromText(text: string): Poem {
-        const lines = text.split('\n'); // Split text into lines
-        const verses = lines.map(line => Verse.fromLine(line));
-        return new Poem(verses);
+    constructor(text: string) {
+        if(text) {
+            const lines = text.split('\n'); // Split text into lines
+            this.verses = lines.map(line => new Verse(line));
+        }
     }
 }

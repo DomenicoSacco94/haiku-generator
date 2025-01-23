@@ -1,26 +1,14 @@
-import {SyllabCountedWord} from "./SyllabCountedWord.ts";
-import syllables from "syllables";
+import { SyllabCountedWord } from "./SyllabCountedWord.ts";
 
 export class Verse {
     words: SyllabCountedWord[];
     totalSyllables: number;
 
-    constructor(words: SyllabCountedWord[], totalSyllables: number) {
-        this.words = words;
-        this.totalSyllables = totalSyllables;
-    }
-
-    static fromLine(line: string): Verse {
+    constructor(line: string) {
         const words = line.split(/\s+/); // Split line into words
-        let totalSyllables = 0;
-
-        const syllabCountedWords = words.map((word) => {
-            if (word.trim() === '') return null; // Skip empty words
-            const wordSyllables = syllables(word);
-            totalSyllables += wordSyllables;
-            return new SyllabCountedWord(word, wordSyllables);
-        }).filter(Boolean) as SyllabCountedWord[];
-
-        return new Verse(syllabCountedWords, totalSyllables);
+        this.words = words
+            .filter(word => word.trim() !== '') // Skip empty words
+            .map(word => new SyllabCountedWord(word));
+        this.totalSyllables = this.words.reduce((sum, word) => sum + word.syllableCount, 0);
     }
 }
