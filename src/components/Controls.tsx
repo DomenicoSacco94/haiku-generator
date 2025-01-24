@@ -99,7 +99,7 @@ function Controls() {
                         min="50"
                         max="700"
                         step="1"
-                        defaultValue="50"
+                        defaultValue="270"
                         onChange={(event) => handleChange('paddingTop', parseInt(event.target.value))}
                     />
                     <label style={{padding: "10px"}}>{poemStyle.paddingTop}px</label>
@@ -111,7 +111,7 @@ function Controls() {
                     <input
                         id="margin-left"
                         type="range"
-                        min="50"
+                        min="0"
                         max="250"
                         step="1"
                         defaultValue="50"

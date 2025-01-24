@@ -24,7 +24,6 @@
 .poem-display-area {
   flex: 1;
   text-align: center;
-  padding: 50px;
   background-color: #eeeeee;
   font-size: 2em;
 }

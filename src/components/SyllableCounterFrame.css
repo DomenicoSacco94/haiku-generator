@@ -20,3 +20,11 @@
     align-items: center;
     margin-bottom: 8px;
 }
+
+.syllable-counting-text{
+    padding: 50px;
+}
+
+.syllable-counting-title{
+    padding: 20px;
+}
