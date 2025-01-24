@@ -7,7 +7,7 @@
     background-color: #eeeeee;
 }
 
-.control-group-column{
+.control-group-column {
     padding: 50px;
 }
 
@@ -29,4 +29,23 @@
 
 .control-item {
     flex-grow: 1;
+}
+
+@media (max-width: 767px) {
+    .controls-container {
+        flex-direction: column;
+    }
+
+    .control-group-column {
+        padding: 20px;
+    }
+
+    .control-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .control-title {
+        margin-bottom: 5px;
+    }
 }

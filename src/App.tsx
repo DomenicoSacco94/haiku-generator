@@ -4,6 +4,8 @@ import Controls from './components/Controls'
 import SyllableCounterFrame from "./components/SyllableCounterFrame.tsx";
 
 //TODO craft responsive design
+//TODO more unit tests
+//TODO add haiku validation logic
 //TODO add background customization tool
 //TODO add helper modal
 
