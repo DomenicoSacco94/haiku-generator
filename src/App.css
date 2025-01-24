@@ -20,6 +20,8 @@
   display: flex;
   flex-direction: column;
   flex: 1;
+  min-height: 0;
+  overflow-y: auto; /* Make the container scrollable */
 }
 
 .poem-display-area {
@@ -45,5 +47,16 @@
   .tools-container {
     flex: 1;
     flex-direction: column;
+  }
+}
+
+@media (max-width: 767px) {
+  .tools-container {
+    flex: 0 1 auto; /* Allow the container to shrink */
+    overflow-y: auto; /* Make the container scrollable */
+  }
+
+  .controls {
+    flex: 0 1 auto; /* Allow the controls to shrink */
   }
 }
