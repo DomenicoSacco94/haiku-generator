@@ -43,85 +43,89 @@ function Controls() {
 
     return (
         <div className="controls-container">
-            <div className="control-group">
-                <div className="control-title">Font Family</div>
-                <Select className="control-item" defaultValue="monospace" style={{ width: 120 }} onChange={(value) => handleChange('fontFamily', value)}>
-                    {fontFamilies.map((family) => (
-                        <Option key={family} value={family}>{family}</Option>
-                    ))}
-                </Select>
-            </div>
-            <div className="control-group">
-                <div className="control-title">Font Style</div>
-                <Select className="control-item" defaultValue="normal" style={{ width: 120 }} onChange={(value) => handleChange('fontStyle', value)}>
-                    {fontStyles.map((style) => (
-                        <Option key={style} value={style}>{style}</Option>
-                    ))}
-                </Select>
-            </div>
-            <div className="control-group">
-                <div className="control-title">Text Color</div>
-                <Select className="control-item" defaultValue="#000000" style={{ width: 120 }} onChange={(value) => handleChange('textColor', value)}>
-                    {colors.map(({ color, colorCode }) => (
-                        <Option key={colorCode} value={colorCode}>{color}</Option>
-                    ))}
-                </Select>
-            </div>
-            <div className="control-group">
-                <div className="control-title">Text Size</div>
-                <div className="control-item">
-                    <input
-                        id="text-size"
-                        type="range"
-                        min="2.0"
-                        max="5.0"
-                        step="0.1"
-                        defaultValue="2.0"
-                        onChange={(event) => handleChange('textSize', parseFloat(event.target.value))}
-                    />
-                    <label style={{padding: "10px"}}>{poemStyle.textSize}em</label>
+            <div className="control-group-column">
+                <div className="control-group">
+                    <div className="control-title">Font Family</div>
+                    <Select className="control-item" defaultValue="monospace" style={{ width: 120 }} onChange={(value) => handleChange('fontFamily', value)}>
+                        {fontFamilies.map((family) => (
+                            <Option key={family} value={family}>{family}</Option>
+                        ))}
+                    </Select>
+                </div>
+                <div className="control-group">
+                    <div className="control-title">Font Style</div>
+                    <Select className="control-item" defaultValue="normal" style={{ width: 120 }} onChange={(value) => handleChange('fontStyle', value)}>
+                        {fontStyles.map((style) => (
+                            <Option key={style} value={style}>{style}</Option>
+                        ))}
+                    </Select>
+                </div>
+                <div className="control-group">
+                    <div className="control-title">Text Color</div>
+                    <Select className="control-item" defaultValue="#000000" style={{ width: 120 }} onChange={(value) => handleChange('textColor', value)}>
+                        {colors.map(({ color, colorCode }) => (
+                            <Option key={colorCode} value={colorCode}>{color}</Option>
+                        ))}
+                    </Select>
+                </div>
+                <div className="control-group">
+                    <div className="control-title">Background Color</div>
+                    <Select className="control-item" defaultValue="#FFFFFF" style={{ width: 120 }} onChange={(value) => handleChange('backgroundColor', value)}>
+                        {colors.map(({ color, colorCode }) => (
+                            <Option key={colorCode} value={colorCode}>{color}</Option>
+                        ))}
+                    </Select>
                 </div>
             </div>
-            <div className="control-group">
-                <div className="control-title">Background Color</div>
-                <Select className="control-item" defaultValue="#FFFFFF" style={{ width: 120 }} onChange={(value) => handleChange('backgroundColor', value)}>
-                    {colors.map(({ color, colorCode }) => (
-                        <Option key={colorCode} value={colorCode}>{color}</Option>
-                    ))}
-                </Select>
-            </div>
-            <div className="control-group">
-                <div className="control-title">Margin Top</div>
-                <div className="control-item">
-                    <input
-                        id="margin-top"
-                        type="range"
-                        min="50"
-                        max="700"
-                        step="1"
-                        defaultValue="270"
-                        onChange={(event) => handleChange('paddingTop', parseInt(event.target.value))}
-                    />
-                    <label style={{padding: "10px"}}>{poemStyle.paddingTop}px</label>
+            <div className="control-group-column">
+                <div className="control-group">
+                    <div className="control-title">Text Size</div>
+                    <div className="control-item">
+                        <input
+                            id="text-size"
+                            type="range"
+                            min="2.0"
+                            max="5.0"
+                            step="0.1"
+                            defaultValue="2.0"
+                            onChange={(event) => handleChange('textSize', parseFloat(event.target.value))}
+                        />
+                        <label style={{padding: "10px"}}>{poemStyle.textSize}em</label>
+                    </div>
                 </div>
-            </div>
-            <div className="control-group">
-                <div className="control-title">Margin Left</div>
-                <div className="control-item">
-                    <input
-                        id="margin-left"
-                        type="range"
-                        min="0"
-                        max="250"
-                        step="1"
-                        defaultValue="50"
-                        onChange={(event) => handleChange('paddingLeft', parseInt(event.target.value))}
-                    />
-                    <label style={{padding: "10px"}}>{poemStyle.paddingLeft}px</label>
+                <div className="control-group">
+                    <div className="control-title">Margin Top</div>
+                    <div className="control-item">
+                        <input
+                            id="margin-top"
+                            type="range"
+                            min="50"
+                            max="700"
+                            step="1"
+                            defaultValue="270"
+                            onChange={(event) => handleChange('paddingTop', parseInt(event.target.value))}
+                        />
+                        <label style={{padding: "10px"}}>{poemStyle.paddingTop}px</label>
+                    </div>
                 </div>
-            </div>
-            <div className="control-group">
-                <Button className="control-item" type="primary" onClick={handlePrintClick}>Print Poem</Button>
+                <div className="control-group">
+                    <div className="control-title">Margin Left</div>
+                    <div className="control-item">
+                        <input
+                            id="margin-left"
+                            type="range"
+                            min="0"
+                            max="250"
+                            step="1"
+                            defaultValue="50"
+                            onChange={(event) => handleChange('paddingLeft', parseInt(event.target.value))}
+                        />
+                        <label style={{padding: "10px"}}>{poemStyle.paddingLeft}px</label>
+                    </div>
+                </div>
+                <div className="control-group">
+                    <Button className="control-item" type="primary" onClick={handlePrintClick}>Print Poem</Button>
+                </div>
             </div>
         </div>
     );

@@ -1,10 +1,14 @@
 .controls-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     height: 100%;
     background-color: #eeeeee;
+}
+
+.control-group-column{
+    padding: 50px;
 }
 
 .control-group {
