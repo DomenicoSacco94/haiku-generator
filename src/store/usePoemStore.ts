@@ -8,6 +8,8 @@ interface PoemState {
         fontStyle: string;
         fontFamily: string;
         backgroundColor: string;
+        paddingTop: number;
+        paddingLeft: number;
     };
     setPoemText: (poemText: string) => void;
     setPoemStyle: (style: Partial<PoemState['poemStyle']>) => void;
@@ -21,10 +23,11 @@ export const usePoemStore = create<PoemState>((set) => ({
         fontStyle: 'normal',
         fontFamily: 'monospace',
         backgroundColor: '#ffffff',
+        paddingTop: 0,
+        paddingLeft: 0,
     },
     setPoemText: (poemText) => set({ poemText }),
     setPoemStyle: (style) => set((state) => ({
         poemStyle: { ...state.poemStyle, ...style }
     })),
 }));
-

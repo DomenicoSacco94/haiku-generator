@@ -17,7 +17,9 @@ function TextEditor() {
                     fontSize: `${poemStyle.textSize}em`,
                     fontStyle: poemStyle.fontStyle,
                     fontFamily: poemStyle.fontFamily,
-                    backgroundColor: poemStyle.backgroundColor
+                    backgroundColor: poemStyle.backgroundColor,
+                    paddingTop: `${poemStyle.paddingTop}px`,
+                    paddingLeft: `${poemStyle.paddingLeft}px`
                 }}
                 className="poem-text-area"
                 onChange={handleTextChange}

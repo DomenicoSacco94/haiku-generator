@@ -91,6 +91,36 @@ function Controls() {
                 </Select>
             </div>
             <div className="control-group">
+                <div className="control-title">Margin Top</div>
+                <div className="control-item">
+                    <input
+                        id="margin-top"
+                        type="range"
+                        min="50"
+                        max="700"
+                        step="1"
+                        defaultValue="50"
+                        onChange={(event) => handleChange('paddingTop', parseInt(event.target.value))}
+                    />
+                    <label style={{padding: "10px"}}>{poemStyle.paddingTop}px</label>
+                </div>
+            </div>
+            <div className="control-group">
+                <div className="control-title">Margin Left</div>
+                <div className="control-item">
+                    <input
+                        id="margin-left"
+                        type="range"
+                        min="50"
+                        max="250"
+                        step="1"
+                        defaultValue="50"
+                        onChange={(event) => handleChange('paddingLeft', parseInt(event.target.value))}
+                    />
+                    <label style={{padding: "10px"}}>{poemStyle.paddingLeft}px</label>
+                </div>
+            </div>
+            <div className="control-group">
                 <Button className="control-item" type="primary" onClick={handlePrintClick}>Print Poem</Button>
             </div>
         </div>

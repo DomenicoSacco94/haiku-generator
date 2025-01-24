@@ -3,7 +3,6 @@ import TextEditor from './components/TextEditor'
 import Controls from './components/Controls'
 import SyllableCounterFrame from "./components/SyllableCounterFrame.tsx";
 
-//TODO allow user to adjust padding from top and form left
 //TODO add background customization tool
 //TODO deploy on github pages
 
