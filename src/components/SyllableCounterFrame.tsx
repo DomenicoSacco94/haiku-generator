@@ -1,8 +1,8 @@
-import './PoemFrame.css'
+import './SyllableCounterFrame.css'
 import { Poem } from "../models/Poem.ts";
 import {usePoemStore} from "../store/usePoemStore.ts";
 
-function PoemFrame() {
+function SyllableCounterFrame() {
     const poemText = usePoemStore((state) => state.poemText);
     const poem: Poem = new Poem(poemText);
     return (
@@ -26,4 +26,4 @@ function PoemFrame() {
     );
 }
 
-export default PoemFrame;
+export default SyllableCounterFrame;

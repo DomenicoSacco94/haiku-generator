@@ -79,7 +79,7 @@ function Controls() {
                 </Select>
             </div>
             <div className="control-group">
-                <div className="control-title">Size</div>
+                <div className="control-title">Text Size</div>
                 <div className="control-item">
                     <input
                         id="text-size"

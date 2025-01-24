@@ -1,9 +1,8 @@
 import './App.css'
 import TextEditor from './components/TextEditor'
 import Controls from './components/Controls'
-import PoemFrame from "./components/PoemFrame.tsx";
+import SyllableCounterFrame from "./components/SyllableCounterFrame.tsx";
 
-//TODO change the layout putting the controls as second half of the poem frame
 //TODO create a single object for the style property inside zustand
 //TODO add image generation tool
 //TODO add background customization tool
@@ -17,7 +16,7 @@ function App() {
             </div>
             <div className="tools-container">
                 <div className="poem-display-area">
-                    <PoemFrame />
+                    <SyllableCounterFrame />
                 </div>
                 <div className="controls">
                     <Controls />
