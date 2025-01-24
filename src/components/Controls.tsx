@@ -23,7 +23,7 @@ function Controls() {
 
     const handlePrintClick = () => {
         const textEditorElement = document.querySelector('.poem-text-area');
-        if (textEditorElement) {
+        if (textEditorElement instanceof HTMLElement) {
             toPng(textEditorElement)
                 .then((dataUrl) => {
                     const link = document.createElement('a');
