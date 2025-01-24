@@ -3,9 +3,9 @@ import TextEditor from './components/TextEditor'
 import Controls from './components/Controls'
 import SyllableCounterFrame from "./components/SyllableCounterFrame.tsx";
 
-//TODO add background customization tool
 //TODO deploy on github pages
 //TODO craft responsive design
+//TODO add background customization tool
 //TODO add helper modal
 
 function App() {
