@@ -3,7 +3,7 @@ import TextEditor from './components/TextEditor'
 import Controls from './components/Controls'
 import SyllableCounterFrame from "./components/SyllableCounterFrame.tsx";
 
-//TODO add image generation tool
+//TODO allow user to adjust padding from top and form left
 //TODO add background customization tool
 //TODO deploy on github pages
 

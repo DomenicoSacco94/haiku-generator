@@ -1,6 +1,7 @@
 import { usePoemStore } from '../store/usePoemStore';
 import { Button, Select } from 'antd';
 import './Controls.css';
+import { toPng } from 'html-to-image';
 
 const { Option } = Select;
 
@@ -17,13 +18,23 @@ const fontStyles = ['normal', 'italic'];
 const fontFamilies = ['monospace', 'Comic Sans MS', 'Arial', 'Times New Roman'];
 
 function Controls() {
-    const poemText = usePoemStore((state) => state.poemText);
     const poemStyle = usePoemStore((state) => state.poemStyle);
     const setPoemStyle = usePoemStore((state) => state.setPoemStyle);
 
     const handlePrintClick = () => {
-        console.log("Will print some stuff");
-        console.log(poemText);
+        const textEditorElement = document.querySelector('.poem-text-area');
+        if (textEditorElement) {
+            toPng(textEditorElement)
+                .then((dataUrl) => {
+                    const link = document.createElement('a');
+                    link.download = 'poem.png';
+                    link.href = dataUrl;
+                    link.click();
+                })
+                .catch((error) => {
+                    console.error('Error generating image:', error);
+                });
+        }
     };
 
     const handleChange = (attribute: string, value: string | number) => {
