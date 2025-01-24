@@ -4,27 +4,31 @@
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
-}
-
 .app-container {
   display: flex;
-  flex-direction: column;
   height: 100vh;
 }
 
-.main-content {
+.poem-area {
+  flex: 1;
   display: flex;
-  flex: 4;
+  flex-direction: column;
 }
 
-.text-editor {
+.tools-container {
+  display: flex;
+  flex-direction: column;
   flex: 1;
-  margin: 20px;
+}
+
+.poem-display-area {
+  flex: 1;
+  text-align: center;
+  padding: 50px;
+  background-color: #eeeeee;
+  font-size: 2em;
 }
 
 .controls {
   flex: 1;
-  margin: 30px;
 }

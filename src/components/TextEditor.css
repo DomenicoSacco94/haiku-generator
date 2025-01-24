@@ -1,31 +1,5 @@
-.poem-area {
-    display: flex;
-    flex-direction: row;
-    height: 100%;
-
-}
-
-div.poem-area .poem-text-area {
+.poem-text-area {
     flex: 1;
-    resize: none;
-    margin: 10px;
     padding: 50px;
     text-align: center;
-    font-size: 2em;
-}
-
-.poem-display-area {
-    flex: 1;
-    text-align: center;
-    margin: 10px;
-    padding: 50px;
-    background-color: #eeeeee;
-    font-size: 2em;
-}
-
-.poem-counted-word-group {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 8px;
 }
