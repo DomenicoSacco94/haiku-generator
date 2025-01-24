@@ -2,6 +2,8 @@ import { usePoemStore } from '../store/usePoemStore';
 import { Button, Select } from 'antd';
 import './Controls.css';
 
+import {ChangeEvent} from "react";
+
 const { Option } = Select;
 
 const colors = [
@@ -10,6 +12,7 @@ const colors = [
     { color: 'Green', colorCode: '#00FF00' },
     { color: 'Blue', colorCode: '#0000FF' },
     { color: 'White', colorCode: '#FFFFFF' },
+    { color: 'Gray', colorCode: '#808080' },
 ];
 
 const fontStyles = ['normal', 'bold', 'italic'];
@@ -33,7 +36,7 @@ function Controls() {
         setTextColor(value);
     };
 
-    const handleSizeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleSizeChange = (event: ChangeEvent<HTMLInputElement>) => {
         setTextSize(parseFloat(event.target.value));
     };
 
@@ -98,7 +101,7 @@ function Controls() {
                     ))}
                 </Select>
             </div>
-            <div className="control-group-button">
+            <div className="control-group">
                 <Button className="control-item" type="primary" onClick={handlePrintClick}>Print Poem</Button>
             </div>
         </div>
