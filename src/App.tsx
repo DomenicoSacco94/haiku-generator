@@ -3,7 +3,6 @@ import TextEditor from './components/TextEditor'
 import Controls from './components/Controls'
 import SyllableCounterFrame from "./components/SyllableCounterFrame.tsx";
 
-//TODO create a single object for the style property inside zustand
 //TODO add image generation tool
 //TODO add background customization tool
 //TODO deploy on github pages
