@@ -1,30 +1,35 @@
 import './TextEditor.css';
-import TextArea from "antd/lib/input/TextArea";
-import { ChangeEvent } from "react";
-import { usePoemStore } from "../store/usePoemStore.ts";
+import { Input } from 'antd';
+import { ChangeEvent } from 'react';
+import { usePoemStore } from '../store/usePoemStore.ts';
+import Draggable from 'react-draggable';
 
 function TextEditor() {
     const setPoem = usePoemStore((state) => state.setPoemText);
     const poemStyle = usePoemStore((state) => state.poemStyle);
 
-    const handleTextChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    const handleTextChange = (e: ChangeEvent<HTMLInputElement>) => {
         setPoem(e.target.value);
     };
 
-    return <TextArea
-                style={{
-                    color: poemStyle.textColor,
-                    fontSize: `${poemStyle.textSize}em`,
-                    fontStyle: poemStyle.fontStyle,
-                    fontFamily: poemStyle.fontFamily,
-                    backgroundColor: poemStyle.backgroundColor,
-                    paddingTop: `${poemStyle.paddingTop}px`,
-                    paddingLeft: `${poemStyle.paddingLeft}px`
-                }}
-                className="poem-text-area"
-                onChange={handleTextChange}
-                placeholder="Write your art here..."
-            />
+    return (
+        <Draggable>
+            <div>
+                <Input
+                    style={{
+                        color: poemStyle.textColor,
+                        fontSize: `${poemStyle.textSize}em`,
+                        fontStyle: poemStyle.fontStyle,
+                        fontFamily: poemStyle.fontFamily,
+                        backgroundColor: poemStyle.backgroundColor,
+                    }}
+                    className="poem-text-input"
+                    onChange={handleTextChange}
+                    placeholder="Write your art here..."
+                />
+            </div>
+        </Draggable>
+    );
 }
 
 export default TextEditor;

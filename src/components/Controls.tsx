@@ -22,7 +22,7 @@ function Controls() {
     const setPoemStyle = usePoemStore((state) => state.setPoemStyle);
 
     const handlePrintClick = () => {
-        const textEditorElement = document.querySelector('.poem-text-area');
+        const textEditorElement = document.querySelector('.poem-area');
         if (textEditorElement instanceof HTMLElement) {
             toPng(textEditorElement)
                 .then((dataUrl) => {
@@ -91,36 +91,6 @@ function Controls() {
                             onChange={(event) => handleChange('textSize', parseFloat(event.target.value))}
                         />
                         <label style={{padding: "10px"}}>{poemStyle.textSize}em</label>
-                    </div>
-                </div>
-                <div className="control-group">
-                    <div className="control-title">Margin Top</div>
-                    <div className="control-item">
-                        <input
-                            id="margin-top"
-                            type="range"
-                            min="50"
-                            max="700"
-                            step="1"
-                            defaultValue="270"
-                            onChange={(event) => handleChange('paddingTop', parseInt(event.target.value))}
-                        />
-                        <label style={{padding: "10px"}}>{poemStyle.paddingTop}px</label>
-                    </div>
-                </div>
-                <div className="control-group">
-                    <div className="control-title">Margin Left</div>
-                    <div className="control-item">
-                        <input
-                            id="margin-left"
-                            type="range"
-                            min="0"
-                            max="250"
-                            step="1"
-                            defaultValue="50"
-                            onChange={(event) => handleChange('paddingLeft', parseInt(event.target.value))}
-                        />
-                        <label style={{padding: "10px"}}>{poemStyle.paddingLeft}px</label>
                     </div>
                 </div>
                 <div className="control-group">
