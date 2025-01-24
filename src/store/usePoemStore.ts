@@ -23,8 +23,8 @@ export const usePoemStore = create<PoemState>((set) => ({
         fontStyle: 'normal',
         fontFamily: 'monospace',
         backgroundColor: '#ffffff',
-        paddingTop: 0,
-        paddingLeft: 0,
+        paddingTop: 270,
+        paddingLeft: 50,
     },
     setPoemText: (poemText) => set({ poemText }),
     setPoemStyle: (style) => set((state) => ({

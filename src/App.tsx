@@ -5,6 +5,8 @@ import SyllableCounterFrame from "./components/SyllableCounterFrame.tsx";
 
 //TODO add background customization tool
 //TODO deploy on github pages
+//TODO craft responsive design
+//TODO add helper modal
 
 function App() {
     return (
