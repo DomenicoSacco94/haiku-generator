@@ -10,7 +10,6 @@ function ControlBar() {
     const poemStyle = usePoemStore((state) => state.poemStyle);
     const setPoemStyle = usePoemStore((state) => state.setPoemStyle);
     const setShowSyllables = usePoemStore((state) => state.setShowSyllables);
-    const showSyllables = usePoemStore((state) => state.showSyllables);
     const [isVisible, setIsVisible] = useState(true);
 
     const handleChange = (attribute: string, value: string | number) => {

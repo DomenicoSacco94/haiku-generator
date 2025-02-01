@@ -24,9 +24,8 @@ function TextEditor() {
                 )}
                 <TextArea
                     style={{
-                        '--text-size': `${poemStyle.textSize}em`,
                         color: poemStyle.textColor,
-                        fontSize: `var(--text-size)`,
+                        fontSize: `${poemStyle.textSize}em`,
                         fontStyle: poemStyle.fontStyle,
                         fontFamily: poemStyle.fontFamily,
                         backgroundColor: poemStyle.backgroundColor,
