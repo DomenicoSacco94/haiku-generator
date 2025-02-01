@@ -1,5 +1,5 @@
 import { usePoemStore } from '../store/usePoemStore';
-import { Button, Collapse } from 'antd';
+import {Button, Checkbox, CheckboxChangeEvent, Collapse} from 'antd';
 import './ControlBar.css';
 import { toPng } from 'html-to-image';
 import {useState} from "react";
@@ -9,6 +9,7 @@ const { Panel } = Collapse;
 function ControlBar() {
     const poemStyle = usePoemStore((state) => state.poemStyle);
     const setPoemStyle = usePoemStore((state) => state.setPoemStyle);
+    const setShowSyllables = usePoemStore((state) => state.setShowSyllables);
     const [isVisible, setIsVisible] = useState(true);
 
     const handleChange = (attribute: string, value: string | number) => {
@@ -17,6 +18,10 @@ function ControlBar() {
 
     const onItalicToggleClick = () => {
         handleChange('fontStyle', poemStyle.fontStyle = poemStyle.fontStyle == "normal" ? "italic" : "normal");
+    };
+
+    const handleShowSyllables = (e: CheckboxChangeEvent) => {
+        setShowSyllables(e.target.checked);
     };
 
     const handlePrintClick = () => {
@@ -42,6 +47,7 @@ function ControlBar() {
             <Collapse>
                 <Panel header="Controls" key="1">
                     <div className="control-bar-content">
+                        <Checkbox defaultChecked onClick={handleShowSyllables}>Show Syllables</Checkbox>
                         <Button onClick={() => handleChange('textSize', poemStyle.textSize + 0.1)}>+</Button>
                         <Button onClick={() => handleChange('textSize', poemStyle.textSize - 0.1)}>-</Button>
                         <Button style={{ fontStyle: poemStyle.fontStyle }} onClick={onItalicToggleClick}>A</Button>

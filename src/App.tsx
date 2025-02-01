@@ -1,6 +1,5 @@
 import './App.css'
 import TextEditor from './components/TextEditor'
-import SyllableCounterFrame from "./components/SyllableCounterFrame.tsx";
 import {usePoemStore} from "./store/usePoemStore.ts";
 
 //TODO craft responsive design
@@ -25,11 +24,6 @@ function App() {
                 }}
                 className="poem-area">
                 <TextEditor />
-            </div>
-            <div className="tools-container">
-                <div className="poem-display-area">
-                    <SyllableCounterFrame />
-                </div>
             </div>
         </div>
     )

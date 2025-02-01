@@ -1,14 +1,23 @@
 import './SyllableCounterFrame.css'
 import { Poem } from "../models/Poem.ts";
-import {usePoemStore} from "../store/usePoemStore.ts";
+import { usePoemStore } from "../store/usePoemStore.ts";
 
 function SyllableCounterFrame() {
     const poemText = usePoemStore((state) => state.poemText);
+    const poemStyle = usePoemStore((state) => state.poemStyle);
     const poem: Poem = new Poem(poemText);
+
     return (
-        <>
-            <h2 className="syllable-counting-title"> Syllable counter </h2>
-            <div className="syllable-counting-text">
+        <div
+            style={{
+                color: poemStyle.textColor,
+                fontSize: `${poemStyle.textSize}em`,
+                fontStyle: poemStyle.fontStyle,
+                fontFamily: poemStyle.fontFamily,
+                backgroundColor: poemStyle.backgroundColor,
+            }}
+        >
+            <div className="poem-text-input">
                 {poemText && poem.verses.map((verse, lineIndex) => (
                     <div key={`line-${lineIndex}`} className="poem-counted-word-group">
                         {verse.words.map((word, wordIndex) => (
@@ -25,7 +34,7 @@ function SyllableCounterFrame() {
                     </div>
                 ))}
             </div>
-        </>
+        </div>
     );
 }
 

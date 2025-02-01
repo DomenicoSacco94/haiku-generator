@@ -5,10 +5,5 @@
     max-width: 100%;
     box-sizing: border-box;
     overflow: hidden;
-}
-
-@media (max-width: 767px) {
-    .poem-text-area {
-        font-size: 1.5em;
-    }
+    text-align: center;
 }
