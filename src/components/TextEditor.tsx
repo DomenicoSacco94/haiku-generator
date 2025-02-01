@@ -11,7 +11,7 @@ function TextEditor() {
     const poemStyle = usePoemStore((state) => state.poemStyle);
     const showSyllables = usePoemStore((state) => state.showSyllables);
 
-    const handleTextChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const handleTextChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
         setPoem(e.target.value);
     };
 
@@ -20,20 +20,21 @@ function TextEditor() {
             <div className="draggable-area">
                 <ControlBar />
                 {showSyllables && (
-                        <SyllableCounterFrame/>
+                    <SyllableCounterFrame />
                 )}
                 <TextArea
                     style={{
+                        '--text-size': `${poemStyle.textSize}em`,
                         color: poemStyle.textColor,
-                        fontSize: `${poemStyle.textSize}em`,
+                        fontSize: `var(--text-size)`,
                         fontStyle: poemStyle.fontStyle,
                         fontFamily: poemStyle.fontFamily,
                         backgroundColor: poemStyle.backgroundColor,
+                        height: `${poemStyle.textSize ? poemStyle.textSize * 120 : 100}px`,
                     }}
                     className="poem-text-input"
                     onChange={handleTextChange}
                     placeholder="Write your art here..."
-                    autoSize={{ minRows: 3, maxRows: 3 }}
                 />
             </div>
         </Draggable>

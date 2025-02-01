@@ -10,6 +10,7 @@ function ControlBar() {
     const poemStyle = usePoemStore((state) => state.poemStyle);
     const setPoemStyle = usePoemStore((state) => state.setPoemStyle);
     const setShowSyllables = usePoemStore((state) => state.setShowSyllables);
+    const showSyllables = usePoemStore((state) => state.showSyllables);
     const [isVisible, setIsVisible] = useState(true);
 
     const handleChange = (attribute: string, value: string | number) => {
@@ -47,7 +48,7 @@ function ControlBar() {
             <Collapse>
                 <Panel header="Controls" key="1">
                     <div className="control-bar-content">
-                        <Checkbox defaultChecked onClick={handleShowSyllables}>Show Syllables</Checkbox>
+                        <Checkbox defaultChecked onChange={handleShowSyllables}>Show Syllables</Checkbox>
                         <Button onClick={() => handleChange('textSize', poemStyle.textSize + 0.1)}>+</Button>
                         <Button onClick={() => handleChange('textSize', poemStyle.textSize - 0.1)}>-</Button>
                         <Button style={{ fontStyle: poemStyle.fontStyle }} onClick={onItalicToggleClick}>A</Button>

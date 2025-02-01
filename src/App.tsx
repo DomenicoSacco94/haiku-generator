@@ -2,7 +2,7 @@ import './App.css'
 import TextEditor from './components/TextEditor'
 import {usePoemStore} from "./store/usePoemStore.ts";
 
-//TODO craft responsive design
+//TODO deal with syllable showing and not showing (mutually exclusive print)
 //TODO more unit tests
 //TODO add haiku validation logic
 //TODO add background customization tool
