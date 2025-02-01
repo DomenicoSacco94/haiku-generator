@@ -3,6 +3,7 @@ import { Input } from 'antd';
 import { ChangeEvent } from 'react';
 import { usePoemStore } from '../store/usePoemStore.ts';
 import Draggable from 'react-draggable';
+import ControlBar from './ControlBar';
 
 function TextEditor() {
     const setPoem = usePoemStore((state) => state.setPoemText);
@@ -15,6 +16,7 @@ function TextEditor() {
     return (
         <Draggable>
             <div>
+                <ControlBar />
                 <Input
                     style={{
                         color: poemStyle.textColor,

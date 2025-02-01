@@ -1,0 +1,11 @@
+.control-bar {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.control-bar-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

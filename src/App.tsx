@@ -1,6 +1,5 @@
 import './App.css'
 import TextEditor from './components/TextEditor'
-import Controls from './components/Controls'
 import SyllableCounterFrame from "./components/SyllableCounterFrame.tsx";
 import {usePoemStore} from "./store/usePoemStore.ts";
 
@@ -30,9 +29,6 @@ function App() {
             <div className="tools-container">
                 <div className="poem-display-area">
                     <SyllableCounterFrame />
-                </div>
-                <div className="controls">
-                    <Controls />
                 </div>
             </div>
         </div>
