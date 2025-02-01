@@ -22,7 +22,7 @@ export const usePoemStore = create<PoemState>((set) => ({
     showSyllables: true,
     poemStyle: {
         textColor: '#000000',
-        textSize: 2.0,
+        textSize: 1.0,
         fontStyle: 'normal',
         fontFamily: 'monospace',
         backgroundColor: '#ffffff',
