@@ -17,7 +17,7 @@ function TextEditor() {
 
     return (
         <Draggable>
-            <div>
+            <div className="draggable-area">
                 <ControlBar />
                 {showSyllables && (
                         <SyllableCounterFrame/>

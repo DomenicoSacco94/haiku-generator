@@ -1,8 +1,10 @@
+.draggable-area {
+    width: 30%;
+}
+
 .poem-text-input {
     border: none;
     outline: none;
-    width: 100%;
-    max-width: 100%;
     box-sizing: border-box;
     overflow: hidden;
     text-align: center;
