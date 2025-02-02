@@ -9,8 +9,11 @@ const { Panel } = Collapse;
 function ControlBar() {
     const poemStyle = usePoemStore((state) => state.poemStyle);
     const setPoemStyle = usePoemStore((state) => state.setPoemStyle);
-    const setShowSyllables = usePoemStore((state) => state.setShowSyllables);
-    const [isVisible, setIsVisible] = useState(true);
+    const setHideTextEditorFrame = usePoemStore((state) => state.setHideTextEditorFrame);
+    const setHideSyllableFrame = usePoemStore((state) => state.setHideSyllableFrame);
+    const hideSyllableFrame = usePoemStore((state) => state.hideSyllableFrame);
+
+    const [hideControlBar, setHideControlBar] = useState(false);
 
     const handleChange = (attribute: string, value: string | number) => {
         setPoemStyle({ [attribute]: value });
@@ -21,11 +24,12 @@ function ControlBar() {
     };
 
     const handleShowSyllables = (e: CheckboxChangeEvent) => {
-        setShowSyllables(e.target.checked);
+        setHideSyllableFrame(!e.target.checked);
     };
 
     const handlePrintClick = () => {
-        setIsVisible(false);
+        setHideControlBar(true);
+        !hideSyllableFrame && setHideTextEditorFrame(true);
         const textEditorElement = document.querySelector('.poem-area');
         if (textEditorElement instanceof HTMLElement) {
             toPng(textEditorElement)
@@ -38,12 +42,15 @@ function ControlBar() {
                 .catch((error) => {
                     console.error('Error generating image:', error);
                 })
-                .finally(()=> setIsVisible(true));
+                .finally(()=> {
+                    setHideControlBar(false);
+                    setHideTextEditorFrame(false);
+                });
         }
     };
 
     return (
-        <div hidden={!isVisible} className="control-bar">
+        <div hidden={hideControlBar} className="control-bar">
             <Collapse>
                 <Panel header="Controls" key="1">
                     <div className="control-bar-content">

@@ -8,4 +8,6 @@
     box-sizing: border-box;
     overflow: hidden;
     text-align: center;
+    resize: none !important;
+    padding: 10px;
 }

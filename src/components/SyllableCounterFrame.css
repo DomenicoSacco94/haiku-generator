@@ -21,27 +21,6 @@
     margin-bottom: 8px;
 }
 
-.syllable-counting-text {
-    padding: 50px;
-}
-
-.syllable-counting-title {
-    padding: 20px;
-}
-
-@media (max-width: 767px) {
-    .syllable-counting-text {
-        padding: 20px;
-    }
-
-    .syllable-counting-title {
-        padding: 10px;
-        font-size: 1.2em;
-    }
-}
-
-@media (max-width: 480px) {
-    .syllable-counting-title {
-        display: none;
-    }
+.syllable-counter-frame {
+    padding: 10px;
 }

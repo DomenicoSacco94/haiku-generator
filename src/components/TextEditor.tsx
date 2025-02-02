@@ -9,7 +9,7 @@ import SyllableCounterFrame from "./SyllableCounterFrame";
 function TextEditor() {
     const setPoem = usePoemStore((state) => state.setPoemText);
     const poemStyle = usePoemStore((state) => state.poemStyle);
-    const showSyllables = usePoemStore((state) => state.showSyllables);
+    const hideTextEditorFrame = usePoemStore((state) => state.hideTextEditorFrame);
 
     const handleTextChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
         setPoem(e.target.value);
@@ -17,11 +17,9 @@ function TextEditor() {
 
     return (
         <Draggable>
-            <div className="draggable-area">
+            <div className="draggable-area" hidden={hideTextEditorFrame}>
                 <ControlBar />
-                {showSyllables && (
-                    <SyllableCounterFrame />
-                )}
+                <SyllableCounterFrame />
                 <TextArea
                     style={{
                         color: poemStyle.textColor,

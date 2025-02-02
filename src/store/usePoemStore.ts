@@ -2,7 +2,8 @@ import { create } from 'zustand';
 
 interface PoemState {
     poemText: string | null;
-    showSyllables: boolean;
+    hideSyllableFrame: boolean;
+    hideTextEditorFrame: boolean;
     poemStyle: {
         textColor: string;
         textSize: number;
@@ -14,12 +15,14 @@ interface PoemState {
     };
     setPoemText: (poemText: string) => void;
     setPoemStyle: (style: Partial<PoemState['poemStyle']>) => void;
-    setShowSyllables: (showSyllables: boolean) => void;
+    setHideSyllableFrame: (hideSyllableFrame: boolean) => void;
+    setHideTextEditorFrame: (hideTextEditorFrame: boolean) => void;
 }
 
 export const usePoemStore = create<PoemState>((set) => ({
     poemText: null,
-    showSyllables: true,
+    hideSyllableFrame: false,
+    hideTextEditorFrame: false,
     poemStyle: {
         textColor: '#000000',
         textSize: 1.0,
@@ -33,5 +36,6 @@ export const usePoemStore = create<PoemState>((set) => ({
     setPoemStyle: (style) => set((state) => ({
         poemStyle: { ...state.poemStyle, ...style }
     })),
-    setShowSyllables: (showSyllables) => set({ showSyllables })
+    setHideSyllableFrame: (hideSyllableFrame) => set({ hideSyllableFrame }),
+    setHideTextEditorFrame: (hideTextEditorFrame) => set({ hideTextEditorFrame })
 }));
