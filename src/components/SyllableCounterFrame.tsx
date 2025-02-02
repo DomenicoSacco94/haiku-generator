@@ -10,7 +10,7 @@ function SyllableCounterFrame() {
 
     return (
         <div hidden={hideSyllableFrame}
-            class="syllable-counter-frame"
+            className="syllable-counter-frame"
             style={{
                 color: poemStyle.textColor,
                 fontSize: `${poemStyle.textSize}em`,
