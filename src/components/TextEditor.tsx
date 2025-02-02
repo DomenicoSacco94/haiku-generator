@@ -1,10 +1,7 @@
 import './TextEditor.css';
 import { ChangeEvent } from 'react';
 import { usePoemStore } from '../store/usePoemStore.ts';
-import Draggable from 'react-draggable';
-import ControlBar from './ControlBar';
 import TextArea from "antd/es/input/TextArea";
-import SyllableCounterFrame from "./SyllableCounterFrame";
 
 function TextEditor() {
     const setPoem = usePoemStore((state) => state.setPoemText);
@@ -16,10 +13,7 @@ function TextEditor() {
     };
 
     return (
-        <Draggable>
-            <div className="draggable-area" hidden={hideTextEditorFrame}>
-                <ControlBar />
-                <SyllableCounterFrame />
+            <div hidden={hideTextEditorFrame}>
                 <TextArea
                     style={{
                         color: poemStyle.textColor,
@@ -34,7 +28,6 @@ function TextEditor() {
                     placeholder="Write your art here..."
                 />
             </div>
-        </Draggable>
     );
 }
 

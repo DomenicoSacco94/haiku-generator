@@ -1,6 +1,9 @@
 import './App.css'
 import TextEditor from './components/TextEditor'
 import {usePoemStore} from "./store/usePoemStore.ts";
+import ControlBar from "./components/ControlBar.tsx";
+import SyllableCounterFrame from "./components/SyllableCounterFrame.tsx";
+import Draggable from "react-draggable";
 
 //TODO re-style controller accordion
 //TODO fix for touch interactions on mobile
@@ -20,7 +23,13 @@ function App() {
                     backgroundColor: poemStyle.backgroundColor,
                 }}
                 className="poem-area">
-                <TextEditor />
+                <Draggable>
+                    <div className="draggable-area">
+                        <ControlBar />
+                        <SyllableCounterFrame />
+                        <TextEditor />
+                    </div>
+                </Draggable>
             </div>
         </div>
     )
