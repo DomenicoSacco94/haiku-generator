@@ -9,7 +9,6 @@ interface PoemState {
         textSize: number;
         fontStyle: string;
         fontFamily: string;
-        backgroundColor: string;
         paddingTop: number;
         paddingLeft: number;
     };
@@ -28,7 +27,6 @@ export const usePoemStore = create<PoemState>((set) => ({
         textSize: 1.0,
         fontStyle: 'normal',
         fontFamily: 'monospace',
-        backgroundColor: '#ffffff',
         paddingTop: 270,
         paddingLeft: 50,
     },

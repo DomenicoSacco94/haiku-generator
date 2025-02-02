@@ -16,7 +16,6 @@ function SyllableCounterFrame() {
                 fontSize: `${poemStyle.textSize}em`,
                 fontStyle: poemStyle.fontStyle,
                 fontFamily: poemStyle.fontFamily,
-                backgroundColor: poemStyle.backgroundColor,
             }}
         >
             {poemText && poem.verses.map((verse, lineIndex) => (

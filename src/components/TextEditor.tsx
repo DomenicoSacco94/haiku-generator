@@ -20,7 +20,6 @@ function TextEditor() {
                         fontSize: `${poemStyle.textSize}em`,
                         fontStyle: poemStyle.fontStyle,
                         fontFamily: poemStyle.fontFamily,
-                        backgroundColor: poemStyle.backgroundColor,
                         height: `${poemStyle.textSize ? poemStyle.textSize * 120 : 100}px`,
                     }}
                     className="poem-text-input"

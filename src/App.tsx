@@ -13,14 +13,15 @@ import Draggable from "react-draggable";
 //TODO add helper modal
 
 function App() {
-
-    const poemStyle = usePoemStore((state) => state.poemStyle);
+    const backgroundImage = 'Mount-Fuji.webp';
 
     return (
         <div className="app-container">
             <div
                 style={{
-                    backgroundColor: poemStyle.backgroundColor,
+                    backgroundImage: `url(backgrounds/${backgroundImage})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
                 }}
                 className="poem-area">
                 <Draggable>
@@ -35,4 +36,4 @@ function App() {
     )
 }
 
-export default App
+export default App;
