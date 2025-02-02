@@ -27,7 +27,8 @@ function ControlBar() {
         setHideSyllableFrame(!e.target.checked);
     };
 
-    const handlePrintClick = () => {
+    const handlePrintClick = (e: React.MouseEvent) => {
+        e.stopPropagation();
         setHideControlBar(true);
         !hideSyllableFrame && setHideTextEditorFrame(true);
         const textEditorElement = document.querySelector('.poem-area');
@@ -51,14 +52,13 @@ function ControlBar() {
 
     return (
         <div className={`control-bar ${hideControlBar ? 'control-bar-hidden' : ''}`}>
-            <Collapse >
-                <Panel header="Controls" key="1">
+            <Collapse>
+                <Panel header={<div className="panel-header">Controls <Button type="primary" onClick={handlePrintClick}>Print Poem</Button></div>} key="1">
                     <div className="control-bar-content">
                         <Checkbox defaultChecked onChange={handleShowSyllables}>Show Syllables</Checkbox>
                         <Button onClick={() => handleChange('textSize', poemStyle.textSize + 0.1)}>+</Button>
                         <Button onClick={() => handleChange('textSize', poemStyle.textSize - 0.1)}>-</Button>
                         <Button style={{ fontStyle: poemStyle.fontStyle }} onClick={onItalicToggleClick}>A</Button>
-                        <Button type="primary" onClick={handlePrintClick}>Print Poem</Button>
                     </div>
                 </Panel>
             </Collapse>
