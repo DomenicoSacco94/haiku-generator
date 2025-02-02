@@ -1,5 +1,4 @@
 .control-bar {
-    background-color: #f0f0f0;
     padding: 10px;
     border-bottom: 1px solid #ccc;
 }
@@ -8,4 +7,10 @@
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.control-bar-hidden {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    visibility: hidden !important;
 }

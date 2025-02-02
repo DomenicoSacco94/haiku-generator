@@ -50,8 +50,8 @@ function ControlBar() {
     };
 
     return (
-        <div hidden={hideControlBar} className="control-bar">
-            <Collapse>
+        <div className={`control-bar ${hideControlBar ? 'control-bar-hidden' : ''}`}>
+            <Collapse >
                 <Panel header="Controls" key="1">
                     <div className="control-bar-content">
                         <Checkbox defaultChecked onChange={handleShowSyllables}>Show Syllables</Checkbox>
