@@ -12,13 +12,12 @@ import Draggable from "react-draggable";
 //TODO add helper modal
 
 function App() {
-    const backgroundImage = 'Mount-Fuji.webp';
 
     return (
         <div className="app-container">
             <div
                 style={{
-                    backgroundImage: `url(backgrounds/${backgroundImage})`,
+                    backgroundImage: `url('/haiku-generator/backgrounds/Mount-Fuji.webp')`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                 }}
