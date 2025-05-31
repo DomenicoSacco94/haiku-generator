@@ -1,6 +1,5 @@
 import './App.css'
 import TextEditor from './components/TextEditor'
-import {usePoemStore} from "./store/usePoemStore.ts";
 import ControlBar from "./components/ControlBar.tsx";
 import SyllableCounterFrame from "./components/SyllableCounterFrame.tsx";
 import Draggable from "react-draggable";
