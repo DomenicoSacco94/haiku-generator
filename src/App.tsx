@@ -1,4 +1,5 @@
 import './App.css'
+import { useEffect, useState } from 'react';
 import TextEditor from './components/TextEditor'
 import ControlBar from "./components/ControlBar.tsx";
 import SyllableCounterFrame from "./components/SyllableCounterFrame.tsx";
@@ -12,12 +13,26 @@ import Draggable from "react-draggable";
 //TODO add helper modal
 
 function App() {
+    const [backgroundImage, setBackgroundImage] = useState('');
+
+    useEffect(() => {
+        fetch('/haiku-generator/backgrounds/Mount-Fuji.webp')
+            .then((response) => response.blob())
+            .then((blob) => {
+                const reader = new FileReader();
+                reader.onloadend = () => {
+                    setBackgroundImage(`url(${reader.result})`);
+                };
+                reader.readAsDataURL(blob);
+            })
+            .catch((error) => console.error('Error loading background image:', error));
+    }, []);
 
     return (
         <div className="app-container">
             <div
                 style={{
-                    backgroundImage: `url('/haiku-generator/backgrounds/Mount-Fuji.webp')`,
+                    backgroundImage: backgroundImage,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                 }}
@@ -31,7 +46,7 @@ function App() {
                 </Draggable>
             </div>
         </div>
-    )
+    );
 }
 
 export default App;
